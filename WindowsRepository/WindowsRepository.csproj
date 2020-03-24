@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="EncryptHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Win32APIHelper.cs" />
     <Compile Include="WindowsMessage.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
