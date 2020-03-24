@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
+    <PackageReference Include="sevenzip" Version="19.0.0" />
   </ItemGroup>
 
 </Project>
