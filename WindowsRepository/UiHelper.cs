@@ -62,18 +62,20 @@ namespace DevKitUI
 				dgvc.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 			}
 		}
-
-		/// <summary>
-		/// 当前线程挂起指定的毫秒数（用于防止主界面卡顿）
-		/// </summary>
-		/// <param name="millisecond"></param>
 		public static void GuiSleep(int millisecond)
 		{
+			bool isOK = false;
 			var task = Task.Run(() => {
 				var t = DateTime.Now.Ticks;
-				do { Application.DoEvents(); } while (((DateTime.Now.Ticks - t) / 10000) < millisecond);
+				long v;
+				do
+				{
+					Application.DoEvents();
+					v = (DateTime.Now.Ticks - t) / 10000;
+				} while (v < millisecond);
+				isOK = true;
 			});
-			while (task.Status == TaskStatus.Running || task.Status == TaskStatus.WaitingForActivation) Application.DoEvents();
+			while (!isOK) Application.DoEvents();
 		}
 		/// <summary>
 		/// 异步方法中等待（用于防止主界面卡顿）
