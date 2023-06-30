@@ -10,31 +10,6 @@ namespace DevKitUI
 {
     public static class UiHelper
     {
-        /// <summary>
-        /// 显示当前页面
-        /// </summary>
-        /// <param name="page"></param>
-        /// <param name="parentPage"></param>
-        public static void ShowPage(Control page, Control parentPage)
-        {
-			if (page is Form)
-			{
-				var f = page as Form;
-				f.TopLevel = false;
-				f.FormBorderStyle = FormBorderStyle.None;
-				f.Text = string.Empty;
-				f.ControlBox = false;
-			}
-            if (parentPage is IActivePage)
-            {
-                (parentPage as IActivePage).ActivePage = page;
-            }
-			page.Parent = parentPage;
-			page.Dock = DockStyle.Fill;
-			page.Visible = true;
-			page.BringToFront();	
-		}
-
 		public static void FmtGridView(DataGridView dgv)
 		{
 			dgv.AllowUserToAddRows = false;
