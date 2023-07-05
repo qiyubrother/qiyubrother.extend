@@ -36,7 +36,7 @@ namespace MemoryTraceSample
 		{
 			LogFileName = logFileName;
 			var sb = new StringBuilder();
-			var now = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss fffff")}]";
+			var now = $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss fffff")}";
 			#region 收集调用栈信息
 			for (var i = 0; i < stackTrace.FrameCount; i++)
 			{
