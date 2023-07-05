@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * 所属公司：北京麒宇兄弟科技有限公司
+ * 模块功能：输出日志。支持多文件输出。支持控制台输出，支持OutputDebugString API输出。
+ * 版    本：V2
+ * 创建日期：2018-08-08
+ * 修改日期：2023-06-24
+ * 创建人：liuzhenhua
+ * 电子邮箱：13240137763.com
+ */
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
