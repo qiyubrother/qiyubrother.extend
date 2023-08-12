@@ -97,5 +97,31 @@ namespace qiyubrother.extend
                 }
             }
         }
-    }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+		public static string HttpGet(string url)
+		{
+			string result = "";
+			HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+			req.Method = "Get";
+			try
+			{
+				HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+				Stream stream = resp.GetResponseStream();
+				//获取内容
+				using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+				{
+					result = reader.ReadToEnd();
+				}
+			}
+			catch (Exception ex)
+			{
+				result = ex.Message;
+			}
+			return result;
+		}
+	}
 }
